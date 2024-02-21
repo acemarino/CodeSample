@@ -21,7 +21,7 @@ File: server.js
 - Handles password encryption.
 - Handles user validation for SignUp and LogIn.
 
-More of RamenIO and a fully running application can be found at https://github.com/acemarino/PersonalRamenIO.
+More of RamenIO and a fulll application can be found at https://github.com/acemarino/PersonalRamenIO.
 
 ### ArtistPortfolioWebsite
 
@@ -32,9 +32,10 @@ Note: This file does not run independently.
 File: gallery.js
 
 - Takes in props from navbar to determine which gallery year to display.
-- Takes image arrays and displays them in a masonry gallery format using MUI Masonry.
+- Takes image arrays and displays them in a masonry gallery format using MUI Masonry and .map() method.
 - Supports clickable images that display a modal based carousel gallery upon click.
 - Uses states to track current value in modal gallery to ensure that reaching the end of the gallery does not error out and creates a seamless loop from start to end and end to start.
-- Currently gallery loading is choppy on intial load due to image file size, this can be mitagted with smaller file sizes.
 
-More of ArtistPortfolioWebiste and a fully running application can be found at https://github.com/acemarino/Nola-Website. A live version can be found at https://artbygranola.com/.
+More of ArtistPortfolioWebiste and a fully running application can be found at https://github.com/acemarino/Nola-Website.
+<br>
+A live version can be found at https://artbygranola.com/.

@@ -1,4 +1,4 @@
-
+//gallery file for page gallery and modal gallery
 import React, { useState} from "react"
 
 //image imports
