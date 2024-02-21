@@ -5,7 +5,9 @@
 ### RamenIo
 
 Built with React JS and utilizes Express.js to support backened server.
+<br>
 Note: These files do not run independently.
+<br>
 File: searchBar.js
 
 - Creates search bar for the application to allow searching by different categories.
@@ -24,7 +26,9 @@ More of RamenIO and a fully running application can be found at https://github.c
 ### ArtistPortfolioWebsite
 
 Built with React JS and utilizes MUI libraries to support the gallery
+<br>
 Note: This file does not run independently.
+<br>
 File: gallery.js
 
 - Takes in props from navbar to determine which gallery year to display.
