@@ -2,7 +2,7 @@
 
 ## Aislinn Marino Code Samples
 
-# RamenIo
+### RamenIo
 
 File: searchBar.js
 
@@ -17,7 +17,7 @@ File: server.js
 - Handles password encryption.
 - Handles user validation both in SignUp and LogIn.
 
-# ArtistPortfolioWebsite
+### ArtistPortfolioWebsite
 
 File:gallery.js
 
