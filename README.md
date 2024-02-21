@@ -23,5 +23,5 @@ File: gallery.js
 
 - Takes in props from navbar to determine which gallery year to display.
 - Takes image arrays and displays them in a masonry gallery format using MUI Masonry.
-- Supports clickable images that display a modal based caroseul gallery upon click.
+- Supports clickable images that display a modal based carousel gallery upon click.
 - uses states to track current value in modal gallery to ensure that reaching the end of the gallery does not error out and creates a seamless loop from start to end and end to start.
