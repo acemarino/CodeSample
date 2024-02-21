@@ -2,8 +2,9 @@
 import React, { useState} from "react"
 
 //image imports
+//note: images are large and loading is choppy as a result
 import { Freshman } from "./images";
-import { Senior } from "./images"; //note: images are large and loading is choppy as a result
+import { Senior } from "./images"; 
 import { Home } from "./images";
 import { Sophmore } from "./images";
 import { Junior } from "./images";
@@ -19,6 +20,10 @@ import Box from '@mui/material/Box';
 var description;
 
 //modal component with parameters
+//src: img
+//alt: alt text if image doesn't load
+//title,size,desc,medium: image information
+//onClose,onLeft,onRight: take functions for left arrow, right arrow and close button
 export const Modal = ({ src, alt, title, size, desc, medium, onClose ,onLeft,onRight}) => {
   
   //handles empty descriptions and non empty descriptions
@@ -31,37 +36,40 @@ export const Modal = ({ src, alt, title, size, desc, medium, onClose ,onLeft,onR
     <>
     {/*modal box for caroseul gallery viewing*/}
     <div className="modal-box">
-      <div  onClick={onClose}>
-        <img src={extra[4].img} alt={extra[4].Title} className="close" />
-      </div>
-    <div className="modalstuff">
-      <span className="modal-content" >
-        <img src={src} alt={alt} />
-      </span>
-      <div className="caption">
-        <div >Title: {title}</div>
-        <div >Size: {size}</div>
-        <div >Medium: {medium}</div>
-       {description}
-      </div>
+        <div  onClick={onClose}>
+            <img src={extra[4].img} alt={extra[4].Title} className="close" />
+        </div>
+        
+        {/*div for the items seen in the modal:image, caption and navigation elements(arrows and close button)*/}
+        <div className="modalstuff">
+            <span className="modal-content" >
+                <img src={src} alt={alt} />
+            </span>
+        <div className="caption">
+            <div >Title: {title}</div>
+            <div >Size: {size}</div>
+            <div >Medium: {medium}</div>
+            {description}
+        </div>
       
-      <div className="left" onClick={onLeft}>
-        <img src={extra[2].img} alt={extra[2].Title} className="left"  />
-      </div>
-      <div className="right" onClick={onRight}>
-        <img src={extra[3].img} alt={extra[3].Title}  className="right"/>
-      </div>
-      </div>
+        <div className="left" onClick={onLeft}>
+            <img src={extra[2].img} alt={extra[2].Title} className="left"  />
+        </div>
+        <div className="right" onClick={onRight}>
+            <img src={extra[3].img} alt={extra[3].Title}  className="right"/>
+        </div>
+        </div>
       
     </div>
     </>
   )
 }
+
 //gallery function, display images in a masonry format using MUI Masonry
 export default function Gallery(props) {
-  var year=Freshman;
-  var grade;
-  var max=0;
+  var year=Freshman;// used to change the array passed to .map() line 133
+  var grade; //used for header display(currently not in use)
+  var max=0; //max value used to track number of images per gallery and is used to reset the curValue if needed
   
   if(props.num === "1"){
     year=Freshman;
@@ -89,6 +97,7 @@ export default function Gallery(props) {
     max=2;
   }
   
+  //states, open:modal, load: triggers fade, curValue: current value in modal gallery
   const [isOpen, setIsOpen] = useState(false)
   const [load, setLoad] = useState(true)
   const [curValue, setcurValue] = useState(0)
@@ -123,11 +132,17 @@ export default function Gallery(props) {
       <Masonry columns={{ sm: 1, md: 2, lg:3 , xl: 4 }} spacing={5} sx={{ width: "auto" }} className="galleryImg" >
         {year.map((item, index) => (
             <div key={index}>
+            
+            {/* fade animation from MUI to fade in images one by one*/}
+            {/* fade only works going from home or about page to gallery, does not fade
+            on changing galleries:need to fix*/}
             <Fade 
               in={load} 
               timeout={{ enter: 1000, exit: 500 }}
               style={{ transitionDelay: `${index * 150}ms` }}
               key={`asi-${item.key}-${index}`}>
+            
+            {/*img tag with image formatting*/}
             <img
               onClick={() => showModal(index)}
               src={`${item.img}?w=162&auto=format`}

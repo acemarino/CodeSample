@@ -1,14 +1,15 @@
- {/*search bar to type in to get search value */} 
+ //search bar to type in to get search value 
 import React, { useState, useEffect } from 'react';
 
 const Searchbar = props =>{
-//set up intial state for search
+
+    //set up intial state for search
 const getInitialState = () => {
     const value = "Brand";
     return value;
     };
 
-    //set states
+//set states
 const [search, setSearch] = useState("");
 const [data, setData] = useState([]);
 const [value, setValue] = useState(getInitialState);
