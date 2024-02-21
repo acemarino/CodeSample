@@ -6,7 +6,7 @@
 
 File: searchBar.js
 
-- Creates search bar for the application to allow searching by different categories
+- Creates search bar for the application to allow searching by different categories.
 - Uses a fetch request to return the results.
 - Uses .map() method to iterate through results array and render information in a table.
 
