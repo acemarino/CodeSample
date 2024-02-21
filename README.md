@@ -19,7 +19,7 @@ File: server.js
 
 ### ArtistPortfolioWebsite
 
-File:gallery.js
+File: gallery.js
 
 - Takes in props from navbar to determine which gallery year to display.
 - Takes image arrays and displays them in a masonry gallery format using MUI Masonry.
